@@ -1,5 +1,6 @@
+package Days.One
 
-val puzzleInput = """
+val input = """
     190
     168
     166
