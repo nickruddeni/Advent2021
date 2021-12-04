@@ -4,15 +4,13 @@ import Days.Two.Solution.Game.Move
 
 fun main() {
 
-    val dayOne = Days.One.Solution()
-    val dayOneResult = dayOne.solve(
+    val dayOneResult = Days.One.Solution().solve(
         Days.One.input
             .lines()
             .map { it.toInt() }
     )
 
-    val dayTwo = Days.Two.Solution()
-    val dayTwoResult = dayTwo.solve(
+    val dayTwoResult = Days.Two.Solution().solve(
         Days.Two.input
             .lines()
             .map {
@@ -22,5 +20,10 @@ fun main() {
                     distance = moveComponents[1].toInt()
                 )
             }
+    )
+
+    val dayThreeResult = Days.Three.Solution().solve(
+        Days.Three.input
+            .lines()
     )
 }
