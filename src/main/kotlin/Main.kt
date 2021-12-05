@@ -1,4 +1,5 @@
 
+import Days.Four.Solution.Board
 import Days.Two.Solution.Game.Direction
 import Days.Two.Solution.Game.Move
 
@@ -25,5 +26,29 @@ fun main() {
     val dayThreeResult = Days.Three.Solution().solve(
         Days.Three.input
             .lines()
+    )
+
+    // DAY FOUR
+    val dayFourInput = Days.Four.input.lines()
+
+    val boardLists = mutableListOf<MutableList<String>>()
+    dayFourInput.drop(1).forEach { line ->
+        if (line.isBlank())
+            boardLists.add(mutableListOf())
+        else {
+            boardLists
+                .last()
+                .addAll(line
+                    .split(" ")
+                    .filter { it.isNotBlank() }
+                )
+        }
+    }
+
+    val dayFourResult = Days.Four.Solution().solve(
+        Pair(
+            dayFourInput.first().split(",").map { it.toInt() },
+            boardLists.map { Board(size = 5, values = it.map { it.toInt() }) }
+        )
     )
 }
